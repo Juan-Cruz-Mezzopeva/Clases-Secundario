@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portfolio Profesional</title>
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <header class="perfil-header">
+    <img src="https://picsum.photos/150" alt="Foto de perfil genérica" class="avatar">
+    <h1>Nombre Apellido</h1>
+    <p class="subtitulo">⚡ Desarrollador Web en Entrenamiento / Gamer / Estudiante</p>
+    <div class="redes">
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="tarjeta">
+      <h2>Sobre Mí</h2>
+      <p>Hola! Tengo 17 años y actualmente estoy estudiando programación. Me interesa mucho el desarrollo frontend, los videojuegos y aprender cómo funcionan las tecnologías que uso todos los días.</p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Mis Habilidades Técnicas</h2>
+      <ul>
+        <li>Maquetado estructurado con HTML5</li>
+        <li>Estilos visuales modernos con CSS3</li>
+        <li>Resolución de problemas técnicos</li>
+        <li>Trabajo en equipo y control de versiones</li>
+      </ul>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Educación y Cursos</h2>
+      <table class="tabla-educacion">
+        <thead>
+          <tr>
+            <th>Año</th>
+            <th>Institución / Curso</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2024 - 2026</td>
+            <td>Escuela Secundaria Técnica</td>
+            <td>En curso</td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td>Taller de Introducción a la Programación Web</td>
+            <td>Cursando</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="tarjeta">
+      <h2>¡Ponete en contacto conmigo!</h2>
+      <p>Si querés que trabajemos juntos en un proyecto, dejame tus datos:</p>
+      <form class="formulario-contacto" onsubmit="return false;">
+        <div class="campo">
+          <label>Tu Nombre:</label>
+          <input type="text" placeholder="Ej: Cosme Fulanito">
+        </div>
+        <div class="campo">
+          <label>Tu Correo Electrónico:</label>
+          <input type="email" placeholder="nombre@correo.com">
+        </div>
+        <div class="campo">
+          <label>Mensaje:</label>
+          <textarea placeholder="Escribí tu mensaje acá..."></textarea>
+        </div>
+        <button type="button">Enviar Mensaje</button>
+      </form>
+    </section>
+
+    </main>
+
+  <footer class="pie-pagina">
+    <p>© 2026 - Diseñado por Nombre Apellido en la clase de Web</p>
+  </footer>
+
+</body>
+</html>
