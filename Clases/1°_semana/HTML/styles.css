@@ -1,0 +1,197 @@
+/* CONFIGURACIÓN DE COLORES Y VARIABLES GLOBALES */
+:root {
+  --bg-main: #f8fafc;
+  --bg-dark-banner: #0f172a;
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --accent-color: #6366f1;
+  --accent-hover: #4f46e5;
+  --border-color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* DISEÑO DE CONTENEDORES Y BLOQUES */
+.header-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.header-banner h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.header-banner p {
+  margin: 10px 0 0 0;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.contenedor-principal {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.intro-box {
+  background-color: var(--bg-card);
+  border-left: 5px solid var(--accent-color);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 35px;
+}
+
+.bloque-leccion {
+  background-color: var(--bg-card);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+}
+
+.bloque-leccion h2 {
+  margin-top: 0;
+  color: var(--bg-dark-banner);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  font-size: 1.4rem;
+}
+
+/* TABLA DE ATRIBUTOS Y MAPEO */
+.tabla-etiquetas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-etiquetas th {
+  background-color: #1e293b;
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 12px;
+}
+
+.tabla-etiquetas td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.tabla-etiquetas tr:nth-child(even) td {
+  background-color: #f1f5f9;
+}
+
+/* FORMATO DE CÓDIGO E INLINE CODE */
+code {
+  font-family: 'Consolas', monospace;
+  background-color: #ffe4e6;
+  color: #9f1239;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+pre {
+  font-family: 'Consolas', monospace;
+  background-color: #0f172a;
+  color: #38bdf8;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* CAJAS DE PREVISUALIZACIÓN EN VIVO (DERECHA) */
+.preview-box {
+  background-color: #ffffff;
+  border: 2px dashed #cbd5e1;
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 50px;
+}
+
+/* Reseteos limpios dentro de la previsualización */
+.preview-box h1 { margin: 0; font-size: 1.6rem; color: #000; }
+.preview-box h2 { margin: 0; font-size: 1.2rem; color: #333; border: none; padding: 0; }
+.preview-box p { margin: 0; font-size: 0.95rem; color: #475569; }
+.preview-box ul, .preview-box ol { margin: 0; padding-left: 20px; font-size: 0.95rem; }
+
+/* Estilos de botones y links simulados en las vistas previas */
+.enlace-prueba {
+  color: var(--accent-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.foto-muestra {
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  display: block;
+}
+
+/* Estilo para simular el formulario de prueba */
+.preview-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.preview-form input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+.preview-form button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilo de la mini tabla interna */
+.preview-table-demo {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.preview-table-demo th {
+  background-color: #64748b;
+  color: white;
+  padding: 6px;
+}
+.preview-table-demo td {
+  border: 1px solid var(--border-color);
+  padding: 6px;
+}
+
+.footer-page {
+  text-align: center;
+  padding: 30px;
+  background-color: var(--bg-dark-banner);
+  color: var(--text-muted);
+  margin-top: 50px;
+  font-size: 0.9rem;
+}

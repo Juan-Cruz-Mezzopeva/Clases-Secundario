@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machete Interactivo de HTML5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header-banner">
+    <h1>Machete de Etiquetas HTML5: Estructura, Atributos y Contenido</h1>
+    <p>Guía de referencia en vivo para la Clase de Introducción al Desarrollo Web</p>
+  </header>
+
+  <main class="contenedor-principal">
+    <div class="intro-box">
+      <p><strong>💡 Instrucciones para la clase:</strong> Usen esta página como mapa de consulta. Hagan clic derecho en cualquier parte de la pantalla, elijan <strong>"Inspeccionar"</strong> y observen cómo el código escrito a la izquierda le da vida a los elementos reales mostrados a la derecha.</p>
+    </div>
+
+    <section class="bloque-leccion">
+      <h2>1. La Estructura Invisible Obligatoria</h2>
+      <p>Toda página web real necesita iniciar con estas cuatro cajas fundamentales que le avisan al navegador cómo interpretar el documento.</p>
+      
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Etiqueta y Código HTML</th>
+            <th>¿Para qué sirve?</th>
+            <th>¿Cómo se ve en el navegador?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;!DOCTYPE html&gt;</code><br><code>&lt;html lang="es"&gt;</code></td>
+            <td>Avisa al navegador que esta es una página web moderna (HTML5) y configura el idioma oficial en español para buscadores.</td>
+            <td><em>Invisible. Opera de forma interna.</em></td>
+          </tr>
+          <tr>
+            <td><code>&lt;head&gt; ... &lt;/head&gt;</code></td>
+            <td>Guarda configuraciones técnicas ocultas. Adentro va la etiqueta <code>&lt;title&gt;</code>, que define el nombre de la pestaña superior.</td>
+            <td>Cambia el título de la pestaña de arriba de la pantalla.</td>
+          </tr>
+          <tr>
+            <td><code>&lt;body&gt; ... &lt;/body&gt;</code></td>
+            <td>Es el cuerpo principal. Absolutamente todo lo que el usuario ve (imágenes, textos, botones) debe ir aquí metido.</td>
+            <td>Es todo el lienzo o espacio visible de la pantalla actual.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bloque-leccion">
+      <h2>2. Estructuración de Textos y Títulos Semánticos</h2>
+      <p>El orden y tamaño de los textos le otorgan jerarquía a la información para que sea fácil de leer.</p>
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Código HTML</th>
+            <th>¿Para qué sirve?</th>
+            <th>Previsualización en Pantalla</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
+            <td>Encabezado de máxima importancia. Solo debe haber <strong>uno solo</strong> por cada página web.</td>
+            <td><div class="preview-box"><h1>Título Principal</h1></div></td>
+          </tr>
+          <tr>
+            <td><code>&lt;h2&gt;Subtítulo&lt;/h2&gt;</code></td>
+            <td>Se usa para dividir la página en grandes bloques, apartados o temas lógicos independientes.</td>
+            <td><div class="preview-box"><h2>Subtítulo de Sección</h2></div></td>
+          </tr>
+          <tr>
+            <td><code>&lt;p&gt;Este es un párrafo...&lt;/p&gt;</code></td>
+            <td>Crea bloques de texto fluido. Agrega automáticamente un espacio en blanco debajo para separarse del siguiente párrafo.</td>
+            <td><div class="preview-box"><p>Este es un párrafo de texto común donde se escribe la biografía o descripciones del sitio.</p></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bloque-leccion">
+      <h2>3. Listas y Agrupación de Ítems</h2>
+      <p>Ideales para agrupar canciones favoritas, integrantes de bandas, redes sociales o menús de navegación.</p>
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Código HTML</th>
+            <th>¿Para qué sirve?</th>
+            <th>Previsualización en Pantalla</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<pre>&lt;ul&gt;
+  &lt;li&gt;Playstation&lt;/li&gt;
+  &lt;li&gt;Xbox&lt;/li&gt;
+&lt;/ul&gt;</pre>
+            </td>
+            <td><strong>Unordered List (Lista Desordenada):</strong> Agrupa elementos utilizando viñetas de puntos, sin un orden numérico específico.</td>
+            <td>
+              <div class="preview-box">
+                <ul>
+                  <li>Playstation</li>
+                  <li>Xbox</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+<pre>&lt;ol&gt;
+  &lt;li&gt;Primer Paso&lt;/li&gt;
+  &lt;li&gt;Segundo Paso&lt;/li&gt;
+&lt;/ol&gt;</pre>
+            </td>
+            <td><strong>Ordered List (Lista Ordenada):</strong> Añade números secuenciales automáticos (1, 2, 3...) antes de cada ítem en pantalla.</td>
+            <td>
+              <div class="preview-box">
+                <ol>
+                  <li>Primer Paso</li>
+                  <li>Segundo Paso</li>
+                </ol>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bloque-leccion">
+      <h2>4. Atributos Esenciales: Modificadores de Enlaces e Imágenes</h2>
+      <p>Los atributos se inyectan dentro de la etiqueta inicial para modificar su comportamiento o enlazar archivos externos.</p>
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Etiqueta con Atributos</th>
+            <th>¿Qué hace cada atributo?</th>
+            <th>Resultado Interactivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<pre>&lt;a href="https://google.com" 
+   target="_blank"&gt;
+   Ir a Google
+&lt;/a&gt;</pre>
+            </td>
+            <td>
+              <code>href</code>: Indica la dirección URL exacta de destino.<br>
+              <code>target="_blank"</code>: Obliga al navegador a abrir el enlace en una pestaña nueva.
+            </td>
+            <td>
+              <div class="preview-box">
+                <a href="https://google.com" target="_blank" class="enlace-prueba">Ir a Google</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+<pre>&lt;img src="https://picsum.photos/60" 
+     alt="Imagen" 
+     class="foto-perfil"&gt;</pre>
+            </td>
+            <td>
+              <code>src</code>: Ruta o enlace directo a la imagen en internet.<br>
+              <code>alt</code>: Texto alternativo por si la imagen se rompe.<br>
+              <code>class</code>: Apodo único para poder darle estilos estéticos con CSS.
+            </td>
+            <td>
+              <div class="preview-box">
+                <img src="https://picsum.photos/60" alt="Imagen de muestra" class="foto-muestra">
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bloque-leccion">
+      <h2>5. Formularios de Entrada (Interactividad de Usuario)</h2>
+      <p>Las etiquetas que recolectan información para iniciar sesión, enviar datos o escribir en un chat.</p>
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Estructura de Código</th>
+            <th>¿Para qué sirve?</th>
+            <th>Elemento Real Funcional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<pre>&lt;form&gt;
+  &lt;label&gt;Usuario:&lt;/label&gt;
+  &lt;input type="text" placeholder="Ej: Juan"&gt;
+  &lt;button type="button"&gt;Entrar&lt;/button&gt;
+&lt;/form&gt;</pre>
+            </td>
+            <td>
+              <code>&lt;form&gt;</code>: Caja contenedora del formulario.<br>
+              <code>&lt;input&gt;</code>: Campo libre de escritura.<br>
+              <code>placeholder</code>: Texto guía gris de fondo.
+            </td>
+            <td>
+              <div class="preview-box">
+                <form class="preview-form" onsubmit="return false;">
+                  <label>Usuario:</label>
+                  <input type="text" placeholder="Ej: Juan">
+                  <button type="button">Entrar</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="bloque-leccion">
+      <h2>6. Estructuración en Tablas de Datos</h2>
+      <p>Sirve para organizar matrices rígidas de datos organizadas estrictamente por filas y columnas.</p>
+      <table class="tabla-etiquetas">
+        <thead>
+          <tr>
+            <th>Código de la Tabla</th>
+            <th>Desglose de Etiquetas</th>
+            <th>Renderización Visual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+<pre>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Día&lt;/th&gt; &lt;th&gt;Materia&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Lun&lt;/td&gt; &lt;td&gt;Web 101&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+            </td>
+            <td>
+              <code>&lt;table&gt;</code>: Contenedor general.<br>
+              <code>&lt;tr&gt;</code>: Fila horizontal (Row).<br>
+              <code>&lt;th&gt;</code>: Celda de encabezado (Bold).<br>
+              <code>&lt;td&gt;</code>: Celda de dato común (Data).
+            </td>
+            <td>
+              <div class="preview-box">
+                <table class="preview-table-demo">
+                  <tr>
+                    <th>Día</th>
+                    <th>Materia</th>
+                  </tr>
+                  <tr>
+                    <td>Lun</td>
+                    <td>Web 101</td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer-page">
+    <p>Machete de Referencia HTML5 - Diseñado para Clases Prácticas de Programación Web</p>
+  </footer>
+
+</body>
+</html>
