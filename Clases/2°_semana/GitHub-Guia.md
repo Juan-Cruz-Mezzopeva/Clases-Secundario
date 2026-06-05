@@ -1,47 +1,163 @@
-# 🚀 Guía Paso a Paso: Sube tu Primera Web a GitHub
+# 🚀 Guía Paso a Paso: Crea y Sube tu Proyecto a GitHub
 
-¡Felicitaciones! Ya armaste la estructura de tu página con HTML (los cimientos y paredes) y le diste estilo con CSS. Ahora vamos a usar nuestro superpoder, la **máquina del tiempo** llamada Git, para guardar este trabajo de forma segura y "empujarlo" a la nube para que cualquiera pueda visitarlo. 
-
-Sigue estos pasos con cuidado. ¡Estás trabajando como un desarrollador profesional!
+Esta guía te muestra cómo crear un repositorio en GitHub, configurarlo en tu equipo y subir un proyecto local al repositorio remoto.
 
 ---
 
-## ☁️ Fase 1: Crear el espacio en la nube (GitHub)
+## 1. Antes de comenzar: requisitos
 
-Antes de mandar los archivos, necesitamos decirle a GitHub que nos prepare una caja vacía para recibirlos.
-
-1. Entra a tu cuenta en [GitHub](https://github.com/).
-2. Arriba a la derecha, haz clic en el botón verde **"New"** (o en el símbolo `+` y luego "New repository").
-3. En **Repository name**, ponle un nombre a tu proyecto (por ejemplo: `mi-primer-sitio-web`). *Trata de no usar espacios, usa guiones cortos.*
-4. Déjalo en **Public** (Público).
-5. ⚠️ **¡Súper importante!** NO marques ninguna casilla de abajo (ni "Add a README", ni `.gitignore`). Queremos la caja totalmente vacía.
-6. Haz clic en el botón verde **"Create repository"**. 
-
-Te va a aparecer una pantalla con muchas instrucciones y un link. ¡Déjala abierta, la vamos a usar en un minuto!
+- Tener una cuenta en GitHub.
+- Tener instalado Git en tu computadora.
+- Tener tu proyecto local listo: carpeta con `index.html`, `style.css` u otros archivos.
+- Usar Git Bash o la terminal que prefieras.
 
 ---
 
-## 💻 Fase 2: Preparar la foto local (En tu computadora)
+## 2. Configurar Git en tu equipo
 
-Ahora vamos a tu computadora, a la carpeta donde creaste tu archivo `index.html` y tus estilos.
+Abre Git Bash y ejecuta estos comandos solo si nunca configuraste Git en esta computadora:
 
-1. Abre tu terminal (**Git Bash**).
-2. Usa el comando `cd` para ingresar a la carpeta de tu proyecto. (Ejemplo: `cd proyectodds`).
-3. Si es la primera vez en esa carpeta, dile a Git que empiece a observar los archivos escribiendo:
-   ```bash
-   git init
-El Chismoso: Escribe git status. Vas a ver tus archivos index.html y CSS en color rojo. Eso significa que Git los ve, pero todavía no los está siguiendo.
-A la tarima: Vamos a preparar todos los archivos para la foto. Escribe el siguiente comando (¡no te olvides del punto al final!). Esto pasa los archivos al área de Staging (color verde).
-La foto fija: Llegó el momento de sacar la foto y guardarla en tu historial con un mensaje obligatorio.
+```bash
+git config --global user.name "Tu Nombre Apellido"
+git config --global user.email "tu@email.com"
+```
 
---------------------------------------------------------------------------------
-## 🚀 Fase 3: ¡El gran empuje a la Nube!
+Esto permite a Git identificar tus cambios.
 
-Ya tienes la foto guardada en tu compu, ahora hay que mandarla a la caja vacía que creaste en GitHub.
-Vuelve a la pestaña de GitHub que dejaste abierta en la Fase 1. Busca la sección que dice "…or push an existing repository from the command line" y copia las 3 líneas de código que te aparecen ahí. Pégalas de a una en tu consola y presiona Enter.
-Se verán más o menos así:
-- Le damos nombre a la rama principal:
-- Conectamos tu compu con la nube (pega tu propio link aquí):
-- El gran empuje final: Sube tu historial y tus archivos a GitHub.
+Para verificar la configuración:
 
-🎉 ¡LISTO! Vuelve a tu página de GitHub y recarga la pestaña (F5). ¡Vas a ver tu código index.html y tus carpetas subidas en la nube! Acabas de completar el flujo de trabajo estándar de la industria tecnológica global.
+```bash
+git config --global --list
+```
+
+---
+
+## 3. Crear el repositorio remoto en GitHub
+
+1. Ingresa a tu cuenta de GitHub.
+2. Haz clic en el botón `New` o en el ícono `+` y luego en `New repository`.
+3. Completa los campos:
+   - `Repository name`: un nombre corto y claro, por ejemplo `mi-primer-sitio-web`.
+   - `Description` (opcional): una breve descripción.
+   - `Public` o `Private` según prefieras.
+4. NO marques ninguna casilla de abajo: no agregues `README`, `.gitignore` ni `license`.
+5. Haz clic en `Create repository`.
+
+GitHub te mostrará una página con instrucciones y comandos para conectar tu carpeta local.
+
+---
+
+## 4. Iniciar Git en tu proyecto local
+
+En Git Bash, entra en la carpeta de tu proyecto:
+
+```bash
+cd ruta/a/tu/proyecto
+```
+
+Inicia el repositorio local:
+
+```bash
+git init
+```
+
+Verifica el estado actual:
+
+```bash
+git status
+```
+
+Deberías ver tus archivos sin seguimiento en rojo.
+
+---
+
+## 5. Agregar archivos al área de preparación (staging)
+
+Prepara todos los archivos del proyecto para el primer commit:
+
+```bash
+git add .
+```
+
+Comprueba el estado otra vez:
+
+```bash
+git status
+```
+
+Ahora los archivos aparecerán en verde como listos para confirmar.
+
+---
+
+## 6. Crear el primer commit
+
+Guarda un registro de tu trabajo con un mensaje claro:
+
+```bash
+git commit -m "Primer commit: subo el proyecto inicial"
+```
+
+Esto crea una instantánea de tu proyecto en tu equipo.
+
+---
+
+## 7. Conectar el repositorio local con GitHub
+
+En la página del repositorio remoto en GitHub, copia las instrucciones bajo el título `…or push an existing repository from the command line`.
+
+Generalmente son tres comandos como estos:
+
+```bash
+git branch -M main
+git remote add origin https://github.com/tu-usuario/mi-primer-sitio-web.git
+git push -u origin main
+```
+
+- `git branch -M main` renombra tu rama principal a `main`.
+- `git remote add origin ...` conecta tu carpeta local con el repositorio remoto.
+- `git push -u origin main` sube tu primer commit a GitHub.
+
+---
+
+## 8. Verificar en GitHub
+
+1. Regresa a la página del repositorio en GitHub.
+2. Recarga la página (F5).
+3. Verifica que tus archivos (`index.html`, `style.css`, etc.) estén visibles.
+
+¡Felicidades! Ya tienes tu proyecto en GitHub.
+
+---
+
+## 9. Flujo básico para futuros cambios
+
+Cada vez que hagas cambios, usa estos comandos:
+
+```bash
+git add .
+git commit -m "Descripción corta del cambio"
+git push
+```
+
+Así guardas los cambios localmente y los subes al repositorio remoto.
+
+---
+
+## 10. Consejos útiles
+
+- Usa mensajes de commit claros, por ejemplo: `Arregla diseño del menú`.
+- Revisa `git status` antes de cada commit.
+- Si necesitas ver el historial, usa `git log`.
+- Para descargar los cambios del remoto en el futuro, usa `git pull`.
+
+---
+
+## Resumen rápido
+
+1. Configura Git con tu nombre y correo.
+2. Crea un repositorio vacío en GitHub.
+3. Dentro de tu proyecto local, usa `git init`, `git add .`, y `git commit`.
+4. Conecta el remoto con `git remote add origin ...`.
+5. Sube todo con `git push -u origin main`.
+
+¡Listo! Tu proyecto local ya está en GitHub y puedes continuar trabajando como un desarrollador real.
