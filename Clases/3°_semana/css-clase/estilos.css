@@ -1,0 +1,670 @@
+/* ================================================
+   estilos.css
+   Proyecto de clase · CSS · 5° año Programación
+   Colegio Israelita General San Martín
+   ================================================
+
+   ÍNDICE
+   1. Variables CSS (la paleta y la tipografía)
+   2. Reset y base
+   3. Header y navegación
+   4. Secciones
+   5. Bloque 1 · Selectores (tarjetas)
+   6. Bloque 2 · Box model (demo visual)
+   7. Bloque 3 · Tipografía y colores
+   8. Bloque 4 · Flexbox (demos)
+   9. Bloque 5 · Checklist proyecto
+   10. Tareas
+   11. Footer
+
+   ================================================ */
+
+
+/* ================================================
+   1. VARIABLES CSS
+   Cambiá estos valores y toda la página cambia.
+   ================================================ */
+
+:root {
+  /* --- Colores --- */
+  --color-primario:   #534AB7;   /* morado principal */
+  --color-acento:     #0F6E56;   /* verde acento */
+  --color-alerta:     #854F0B;   /* naranja para destacar */
+  --color-fondo:      #FFFFFF;   /* fondo principal */
+  --color-fondo-alt:  #F1EFE8;   /* fondo alternativo (secciones claras) */
+  --color-oscuro:     #1a1a2e;   /* fondo de secciones oscuras */
+  --color-texto:      #2C2C2A;   /* texto principal */
+  --color-texto-muted:#5F5E5A;   /* texto secundario */
+  --color-borde:      #D3D1C7;   /* bordes suaves */
+
+  /* --- Tipografía --- */
+  --fuente-titulos: 'Syne', sans-serif;       /* CAMBIÁ ESTO con Google Fonts */
+  --fuente-cuerpo:  'Inter', sans-serif;      /* CAMBIÁ ESTO con Google Fonts */
+  --fuente-codigo:  'Courier New', monospace; /* fuente para código */
+
+  /* --- Espaciado base --- */
+  --espacio-xs:  4px;
+  --espacio-sm:  8px;
+  --espacio-md:  16px;
+  --espacio-lg:  32px;
+  --espacio-xl:  64px;
+
+  /* --- Bordes redondeados --- */
+  --radio-sm: 6px;
+  --radio-md: 10px;
+  --radio-lg: 16px;
+}
+
+
+/* ================================================
+   2. RESET Y BASE
+   Reglas que aplican a toda la página.
+   ================================================ */
+
+/* box-sizing: border-box hace que el width incluya padding y border */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* Hace que las imágenes nunca se desborden */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Links sin subrayado por defecto */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ================================================
+   3. HEADER Y NAVEGACIÓN
+   Ejemplo de Flexbox aplicado a una barra real.
+   ================================================ */
+
+.site-header {
+  background-color: var(--color-primario);
+  padding: var(--espacio-md) var(--espacio-lg);
+  position: sticky;   /* se queda fijo al hacer scroll */
+  top: 0;
+  z-index: 100;
+}
+
+/* Flex para poner logo a la izquierda y nav a la derecha */
+.header-inner {
+  display: flex;
+  justify-content: space-between;  /* CAMBIÁ ESTO y mirá qué pasa */
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;                  /* centra el contenido en pantallas grandes */
+}
+
+.logo {
+  font-family: var(--fuente-titulos);
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+/* La navegación también usa Flexbox */
+.navbar {
+  display: flex;
+  gap: var(--espacio-md);          /* espacio entre los links */
+  align-items: center;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  padding: var(--espacio-xs) var(--espacio-sm);
+  border-radius: var(--radio-sm);
+  transition: background-color 0.2s, color 0.2s; /* animación suave al hover */
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+
+/* ================================================
+   4. SECCIONES
+   Estructura base de cada bloque de contenido.
+   ================================================ */
+
+.seccion {
+  padding: var(--espacio-xl) var(--espacio-lg);
+  background-color: var(--color-fondo-alt);  /* fondo gris claro */
+}
+
+/* Secciones alternas oscuras (bloque 2 y 4) */
+.seccion--oscura {
+  background-color: var(--color-oscuro);
+}
+
+/* Limita el ancho y centra el contenido */
+.seccion > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-primario);
+  background-color: rgba(83, 74, 183, 0.1);
+  padding: var(--espacio-xs) var(--espacio-sm);
+  border-radius: var(--radio-sm);
+  margin-bottom: var(--espacio-md);
+}
+
+.etiqueta--claro {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.titulo-principal {
+  font-family: var(--fuente-titulos);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--color-texto);
+  margin-bottom: var(--espacio-md);
+}
+
+.titulo-seccion {
+  font-family: var(--fuente-titulos);
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  color: var(--color-texto);
+  margin-bottom: var(--espacio-md);
+}
+
+/* Cuando la sección es oscura, el título se vuelve blanco */
+.seccion--oscura .titulo-seccion {
+  color: #FFFFFF;
+}
+
+.bajada {
+  font-size: 18px;
+  color: var(--color-texto-muted);
+  max-width: 620px;
+  margin-bottom: var(--espacio-lg);
+}
+
+.bajada--claro {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bajada strong {
+  color: var(--color-texto);
+  font-weight: 600;
+}
+
+.seccion--oscura .bajada--claro strong {
+  color: #FFFFFF;
+}
+
+
+/* ================================================
+   5. BLOQUE 1 · TARJETAS DE SELECTORES
+   Ejemplo de Flexbox + variantes de color con clases.
+   ================================================ */
+
+.tarjetas-row {
+  display: flex;
+  gap: var(--espacio-md);
+  flex-wrap: wrap;              /* si no entran, bajan a la siguiente línea */
+  margin-bottom: var(--espacio-lg);
+}
+
+/* Estilo base de cada tarjeta */
+.tarjeta {
+  flex: 1;                      /* cada tarjeta ocupa el mismo espacio */
+  min-width: 200px;             /* mínimo para que no queden muy angostas */
+  padding: var(--espacio-lg);
+  border-radius: var(--radio-lg);
+  border: 1px solid transparent;
+}
+
+.tarjeta h3 {
+  font-family: var(--fuente-titulos);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--espacio-sm);
+}
+
+.tarjeta p {
+  font-size: 14px;
+  margin-bottom: var(--espacio-md);
+}
+
+.tarjeta code {
+  font-family: var(--fuente-codigo);
+  font-size: 13px;
+  display: block;
+  padding: var(--espacio-sm) var(--espacio-md);
+  border-radius: var(--radio-sm);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Variantes de color usando clases modificadoras */
+.tarjeta--morada {
+  background-color: #EEEDFE;
+  border-color: #AFA9EC;
+  color: #3C3489;
+}
+
+.tarjeta--verde {
+  background-color: #E1F5EE;
+  border-color: #5DCAA5;
+  color: #085041;
+}
+
+.tarjeta--naranja {
+  background-color: #FAEEDA;
+  border-color: #EF9F27;
+  color: #633806;
+}
+
+
+/* ================================================
+   6. BLOQUE 2 · DEMO VISUAL DEL BOX MODEL
+   Capas anidadas que muestran margin/border/padding/content.
+   ================================================ */
+
+.boxmodel-demo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--espacio-lg);
+}
+
+/* margin (capa más externa) */
+.bm-margin {
+  padding: 24px;                /* ESTO representa el margin */
+  background-color: #FAEEDA;
+  border: 2px dashed #BA7517;
+  border-radius: var(--radio-md);
+  position: relative;
+}
+
+/* border */
+.bm-border {
+  border: 6px solid #888780;   /* ESTO representa el border */
+  border-radius: var(--radio-sm);
+  position: relative;
+}
+
+/* padding */
+.bm-padding {
+  padding: 24px;                /* ESTO representa el padding */
+  background-color: #E1F5EE;
+  position: relative;
+}
+
+/* content */
+.bm-content {
+  width: 140px;
+  height: 56px;
+  background-color: #B5D4F4;
+  border-radius: var(--radio-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-codigo);
+  font-size: 14px;
+  font-weight: 600;
+  color: #0C447C;
+}
+
+/* Etiquetas de cada capa */
+.bm-label {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.bm-margin  > .bm-label { color: #633806; }
+.bm-border  > .bm-label { color: #2C2C2A; background: #B4B2A9; padding: 0 4px; border-radius: 3px; }
+.bm-padding > .bm-label { color: #085041; }
+
+/* Bloque de código de ejemplo */
+.bloque-codigo {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-lg);
+  margin-bottom: var(--espacio-lg);
+}
+
+.codigo-titulo {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: var(--espacio-sm);
+}
+
+.bloque-codigo pre {
+  font-family: var(--fuente-codigo);
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: pre-wrap;
+}
+
+.bloque-codigo code {
+  font-family: inherit;
+}
+
+
+/* ================================================
+   7. BLOQUE 3 · DEMO DE TIPOGRAFÍA Y COLORES
+   Muestra distintos tamaños y pesos de fuente.
+   ================================================ */
+
+.tipo-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  margin-bottom: var(--espacio-lg);
+}
+
+.tipo-item {
+  padding: var(--espacio-md) var(--espacio-lg);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-md);
+}
+
+.tipo-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-texto-muted);
+  margin-bottom: var(--espacio-sm);
+}
+
+.demo-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-texto);
+  line-height: 1.1;
+}
+
+.demo-subtitulo {
+  font-family: var(--fuente-cuerpo);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-texto);
+}
+
+.demo-cuerpo {
+  font-family: var(--fuente-cuerpo);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-texto-muted);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.demo-codigo {
+  font-family: var(--fuente-codigo);
+  font-size: 15px;
+  color: var(--color-primario);
+}
+
+/* Chips de paleta de colores */
+.paleta-demo {
+  display: flex;
+  gap: var(--espacio-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--espacio-lg);
+}
+
+.paleta-chip {
+  flex: 1;
+  min-width: 140px;
+  height: 72px;
+  border-radius: var(--radio-md);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--espacio-sm) var(--espacio-md);
+}
+
+.paleta-chip span {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--fuente-codigo);
+}
+
+
+/* ================================================
+   8. BLOQUE 4 · DEMOS DE FLEXBOX
+   Cuatro cajas que muestran distintos justify-content.
+   ================================================ */
+
+.flex-demos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  margin-bottom: var(--espacio-lg);
+}
+
+.flex-demo-bloque {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-md) var(--espacio-lg);
+}
+
+.flex-demo-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: var(--espacio-sm);
+}
+
+.flex-demo-label strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Contenedor flex común a todos los demos */
+.flex-demo {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radio-sm);
+  padding: var(--espacio-sm);
+  gap: var(--espacio-sm);
+}
+
+/* Cada variante cambia solo el justify-content */
+.flex-demo--start   { justify-content: flex-start; }   /* CAMBIÁ ESTO */
+.flex-demo--center  { justify-content: center; }        /* CAMBIÁ ESTO */
+.flex-demo--between { justify-content: space-between; } /* CAMBIÁ ESTO */
+.flex-demo--evenly  { justify-content: space-evenly; }  /* CAMBIÁ ESTO */
+
+/* Los elementos hijos del flex */
+.flex-item {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primario);
+  color: #FFFFFF;
+  border-radius: var(--radio-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;               /* que no se achiquen */
+}
+
+
+/* ================================================
+   9. BLOQUE 5 · CHECKLIST DEL PROYECTO
+   Lista ordenada con números grandes y commits.
+   ================================================ */
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-md);
+  margin-bottom: var(--espacio-lg);
+}
+
+.checklist__item {
+  display: flex;
+  gap: var(--espacio-lg);
+  align-items: flex-start;
+  padding: var(--espacio-lg);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-lg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.checklist__item:hover {
+  border-color: var(--color-primario);
+}
+
+.check-num {
+  font-family: var(--fuente-titulos);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-primario);
+  opacity: 0.3;
+  min-width: 40px;
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.checklist__item strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-texto);
+  margin-bottom: var(--espacio-xs);
+}
+
+.checklist__item p {
+  font-size: 14px;
+  color: var(--color-texto-muted);
+  margin-bottom: var(--espacio-sm);
+}
+
+.commit-msg {
+  display: inline-block;
+  font-family: var(--fuente-codigo);
+  font-size: 12px;
+  color: var(--color-acento);
+  background-color: rgba(15, 110, 86, 0.08);
+  padding: var(--espacio-xs) var(--espacio-sm);
+  border-radius: var(--radio-sm);
+  border: 1px solid rgba(15, 110, 86, 0.2);
+}
+
+
+/* ================================================
+   10. TAREAS (cajas de actividades prácticas)
+   ================================================ */
+
+.tarea {
+  display: flex;
+  gap: var(--espacio-md);
+  align-items: flex-start;
+  padding: var(--espacio-md) var(--espacio-lg);
+  background-color: #FAEEDA;
+  border: 1px solid #EF9F27;
+  border-radius: var(--radio-md);
+  margin-top: var(--espacio-lg);
+}
+
+.tarea--claro {
+  background-color: rgba(250, 238, 218, 0.12);
+  border-color: rgba(239, 159, 39, 0.4);
+}
+
+.tarea__num {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #854F0B;
+  background-color: rgba(133, 79, 11, 0.12);
+  padding: var(--espacio-xs) var(--espacio-sm);
+  border-radius: var(--radio-sm);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.tarea--claro .tarea__num {
+  color: #EF9F27;
+  background-color: rgba(239, 159, 39, 0.15);
+}
+
+.tarea p {
+  font-size: 14px;
+  color: #633806;
+  line-height: 1.6;
+}
+
+.tarea--claro p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tarea code {
+  font-family: var(--fuente-codigo);
+  font-size: 13px;
+  background-color: rgba(133, 79, 11, 0.1);
+  color: #633806;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.tarea--claro code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ================================================
+   11. FOOTER
+   ================================================ */
+
+.site-footer {
+  background-color: var(--color-texto);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  padding: var(--espacio-lg);
+  font-size: 13px;
+}

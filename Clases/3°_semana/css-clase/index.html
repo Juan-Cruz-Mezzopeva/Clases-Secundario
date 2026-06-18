@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primera página con CSS</title>
+
+    <!-- Google Fonts: Inter (cuerpo) + Syne (títulos) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Nuestro archivo de estilos -->
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+  <body>
+
+    <!-- ========================================
+         BLOQUE 1: SELECTORES Y CONEXIÓN CSS
+         Practicá cambiando colores, fuentes y
+         tamaños directamente en estilos.css
+    ======================================== -->
+
+    <header class="site-header">
+      <div class="header-inner">
+        <span class="logo">MiPágina</span>
+        <nav class="navbar">
+          <a href="#bloque-1">CSS básico</a>
+          <a href="#bloque-2">Box model</a>
+          <a href="#bloque-3">Tipografía</a>
+          <a href="#bloque-4">Flexbox</a>
+          <a href="#bloque-5">Proyecto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ── BLOQUE 1 ──────────────────────────── -->
+      <section id="bloque-1" class="seccion">
+        <span class="etiqueta">Bloque 1</span>
+        <h1 class="titulo-principal">Qué es CSS y cómo conectarlo</h1>
+        <p class="bajada">
+          CSS le dice al navegador <em>cómo mostrar</em> el contenido HTML:
+          colores, tamaños, espaciados y posiciones.
+        </p>
+
+        <div class="tarjetas-row">
+          <div class="tarjeta tarjeta--morada">
+            <h3>Selector de etiqueta</h3>
+            <p>Aplica a <strong>todos</strong> los elementos de ese tipo.</p>
+            <code>p { color: red; }</code>
+          </div>
+          <div class="tarjeta tarjeta--verde">
+            <h3>Selector de clase</h3>
+            <p>Aplica a todo elemento con ese <strong>class=""</strong>.</p>
+            <code>.destacado { font-weight: bold; }</code>
+          </div>
+          <div class="tarjeta tarjeta--naranja">
+            <h3>Selector de ID</h3>
+            <p>Aplica <strong>solo</strong> al elemento con ese id="".</p>
+            <code>#titulo { font-size: 32px; }</code>
+          </div>
+        </div>
+
+        <!-- Tarea 1 -->
+        <div class="tarea">
+          <span class="tarea__num">Tarea 1</span>
+          <p>
+            Abrí <code>estilos.css</code> y cambiá el valor de
+            <code>--color-primario</code>. Guardá y mirá cómo cambia toda la
+            página de golpe.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── BLOQUE 2 ──────────────────────────── -->
+      <section id="bloque-2" class="seccion seccion--oscura">
+        <span class="etiqueta etiqueta--claro">Bloque 2</span>
+        <h2 class="titulo-seccion">El modelo de caja (box model)</h2>
+        <p class="bajada bajada--claro">
+          Todo elemento HTML es una caja rectangular con cuatro capas:
+          <strong>margin</strong>, <strong>border</strong>,
+          <strong>padding</strong> y <strong>content</strong>.
+        </p>
+
+        <div class="boxmodel-demo">
+          <div class="bm-margin">
+            <span class="bm-label">margin</span>
+            <div class="bm-border">
+              <span class="bm-label">border</span>
+              <div class="bm-padding">
+                <span class="bm-label">padding</span>
+                <div class="bm-content">content</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bloque-codigo">
+          <p class="codigo-titulo">Probá cambiar estos valores en estilos.css:</p>
+          <pre><code>.bm-margin  { padding: 24px; }   /* margin */
+.bm-border  { border: 4px solid; } /* border */
+.bm-padding { padding: 24px; }   /* padding */
+.bm-content { width: 120px; }    /* content */</code></pre>
+        </div>
+
+        <!-- Tarea 2 -->
+        <div class="tarea tarea--claro">
+          <span class="tarea__num">Tarea 2</span>
+          <p>
+            Inspeccioná esta sección con F12 → DevTools. Buscá el panel
+            "Computed" y observá el diagrama del box model. Cambiá el
+            <code>padding</code> de <code>.boxmodel-demo</code> desde ahí.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── BLOQUE 3 ──────────────────────────── -->
+      <section id="bloque-3" class="seccion">
+        <span class="etiqueta">Bloque 3</span>
+        <h2 class="titulo-seccion">Tipografía, colores y fondos</h2>
+        <p class="bajada">
+          La tipografía y el color son lo primero que ve el usuario.
+          CSS te da control total sobre ambos.
+        </p>
+
+        <div class="tipo-demo">
+          <div class="tipo-item">
+            <span class="tipo-label">font-size: 32px · font-weight: 800</span>
+            <p class="demo-titulo">Título de página</p>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-label">font-size: 18px · font-weight: 500</span>
+            <p class="demo-subtitulo">Subtítulo de sección</p>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-label">font-size: 16px · line-height: 1.7</span>
+            <p class="demo-cuerpo">
+              Texto de cuerpo. Legible y cómodo para leer párrafos largos. La
+              altura de línea correcta hace una gran diferencia en la lectura.
+            </p>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-label">font-family: monospace</span>
+            <p class="demo-codigo">const saludo = "Hola mundo";</p>
+          </div>
+        </div>
+
+        <div class="paleta-demo">
+          <div class="paleta-chip" style="background: var(--color-primario);">
+            <span>--color-primario</span>
+          </div>
+          <div class="paleta-chip" style="background: var(--color-acento);">
+            <span>--color-acento</span>
+          </div>
+          <div class="paleta-chip" style="background: var(--color-fondo-alt); color: var(--color-texto);">
+            <span>--color-fondo-alt</span>
+          </div>
+          <div class="paleta-chip" style="background: var(--color-texto);">
+            <span>--color-texto</span>
+          </div>
+        </div>
+
+        <!-- Tarea 3 -->
+        <div class="tarea">
+          <span class="tarea__num">Tarea 3</span>
+          <p>
+            Elegí una fuente en <strong>fonts.google.com</strong>, copiá el
+            <code>&lt;link&gt;</code> y pegalo en el <code>&lt;head&gt;</code>
+            del HTML. Luego cambiá <code>--fuente-titulos</code> en
+            <code>estilos.css</code> para usarla.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── BLOQUE 4 ──────────────────────────── -->
+      <section id="bloque-4" class="seccion seccion--oscura">
+        <span class="etiqueta etiqueta--claro">Bloque 4</span>
+        <h2 class="titulo-seccion">Layout con Flexbox</h2>
+        <p class="bajada bajada--claro">
+          Flexbox organiza elementos en filas o columnas con control total
+          sobre su alineación y distribución.
+        </p>
+
+        <div class="flex-demos">
+
+          <div class="flex-demo-bloque">
+            <p class="flex-demo-label">justify-content: <strong>flex-start</strong></p>
+            <div class="flex-demo flex-demo--start">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+
+          <div class="flex-demo-bloque">
+            <p class="flex-demo-label">justify-content: <strong>center</strong></p>
+            <div class="flex-demo flex-demo--center">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+
+          <div class="flex-demo-bloque">
+            <p class="flex-demo-label">justify-content: <strong>space-between</strong></p>
+            <div class="flex-demo flex-demo--between">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+
+          <div class="flex-demo-bloque">
+            <p class="flex-demo-label">justify-content: <strong>space-evenly</strong></p>
+            <div class="flex-demo flex-demo--evenly">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tarea 4 -->
+        <div class="tarea tarea--claro">
+          <span class="tarea__num">Tarea 4</span>
+          <p>
+            Cambiá el <code>justify-content</code> de cada
+            <code>.flex-demo</code> en <code>estilos.css</code> y observá el
+            resultado. Después agregá <code>flex-direction: column</code> a uno
+            de ellos.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── BLOQUE 5 ──────────────────────────── -->
+      <section id="bloque-5" class="seccion">
+        <span class="etiqueta">Bloque 5</span>
+        <h2 class="titulo-seccion">Proyecto integrador</h2>
+        <p class="bajada">
+          Aplicá todo lo aprendido. Cada etapa completada = un commit en Git.
+        </p>
+
+        <ol class="checklist">
+          <li class="checklist__item">
+            <span class="check-num">01</span>
+            <div>
+              <strong>Conectar CSS externo</strong>
+              <p>Crear <code>estilos.css</code> y linkearlo en el HTML.</p>
+              <code class="commit-msg">git commit -m "init: agregar archivo CSS"</code>
+            </div>
+          </li>
+          <li class="checklist__item">
+            <span class="check-num">02</span>
+            <div>
+              <strong>Tipografía y colores</strong>
+              <p>Google Fonts + paleta con variables CSS.</p>
+              <code class="commit-msg">git commit -m "style: tipografia y colores"</code>
+            </div>
+          </li>
+          <li class="checklist__item">
+            <span class="check-num">03</span>
+            <div>
+              <strong>Box model</strong>
+              <p>Aplicar margin, padding y border a cada sección.</p>
+              <code class="commit-msg">git commit -m "style: box model aplicado"</code>
+            </div>
+          </li>
+          <li class="checklist__item">
+            <span class="check-num">04</span>
+            <div>
+              <strong>Layout con Flexbox</strong>
+              <p>Navbar y grilla de tarjetas con Flexbox.</p>
+              <code class="commit-msg">git commit -m "layout: navbar y grilla flexbox"</code>
+            </div>
+          </li>
+          <li class="checklist__item">
+            <span class="check-num">05</span>
+            <div>
+              <strong>Deploy en GitHub Pages</strong>
+              <p>Settings → Pages → Branch: main → Save.</p>
+              <code class="commit-msg">git commit -m "docs: sitio publicado en gh-pages"</code>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Programación · 5° año &nbsp;·&nbsp; Colegio Israelita General San Martín</p>
+    </footer>
+
+  </body>
+</html>
