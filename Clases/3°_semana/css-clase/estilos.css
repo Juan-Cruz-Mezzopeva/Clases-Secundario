@@ -21,6 +21,30 @@
 
 
 /* ================================================
+   GOOGLE FONTS - OPCIONES RECOMENDADAS
+   Descomentá la combinación que más te guste.
+   ================================================ */
+
+/* OPCIÓN 1: MODERNA Y LEGIBLE
+   · Títulos: Space Grotesk (geométrica, moderna, ideal para tech)
+   · Cuerpo: Inter (súper legible, diseñada para pantallas)
+   · Código: Fira Code (monoespaciada con ligaduras para código) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* OPCIÓN 2: PROFESIONAL Y SERIA
+   · Títulos: Manrope (geométrica, balanceada, profesional)
+   · Cuerpo: Open Sans (clásica, muy legible, usada en Google)
+   · Código: JetBrains Mono (creada por JetBrains para programar) */
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap'); */
+
+/* OPCIÓN 3: DINÁMICA Y ENERGÉTICA
+   · Títulos: Poppins (redondeada, amigable, moderna)
+   · Cuerpo: Nunito (redondeada, muy legible, consistente)
+   · Código: Source Code Pro (diseñada por Adobe específicamente para código) */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap'); */
+
+
+/* ================================================
    1. VARIABLES CSS
    Cambiá estos valores y toda la página cambia.
    ================================================ */
@@ -38,9 +62,20 @@
   --color-borde:      #D3D1C7;   /* bordes suaves */
 
   /* --- Tipografía --- */
-  --fuente-titulos: 'Syne', sans-serif;       /* CAMBIÁ ESTO con Google Fonts */
-  --fuente-cuerpo:  'Inter', sans-serif;      /* CAMBIÁ ESTO con Google Fonts */
-  --fuente-codigo:  'Courier New', monospace; /* fuente para código */
+  /* Opción 1: Moderna y legible */
+  --fuente-titulos: 'Space Grotesk', sans-serif;
+  --fuente-cuerpo:  'Inter', sans-serif;
+  --fuente-codigo:  'Fira Code', monospace;
+
+  /* Opción 2: Profesional y seria (descomentá para usar) */
+  /* --fuente-titulos: 'Manrope', sans-serif; */
+  /* --fuente-cuerpo:  'Open Sans', sans-serif; */
+  /* --fuente-codigo:  'JetBrains Mono', monospace; */
+
+  /* Opción 3: Dinámica y energética (descomentá para usar) */
+  /* --fuente-titulos: 'Poppins', sans-serif; */
+  /* --fuente-cuerpo:  'Nunito', sans-serif; */
+  /* --fuente-codigo:  'Source Code Pro', monospace; */
 
   /* --- Espaciado base --- */
   --espacio-xs:  4px;
