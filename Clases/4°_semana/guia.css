@@ -1,0 +1,116 @@
+/* ============================================================
+   guia.css
+   Este archivo YA está conectado y estiliza únicamente los
+   cuadros de instrucciones (clases .paso-*, .codigo-box, etc.).
+   A propósito NO toca los elementos "h2", "p" sueltos ni
+   ".destacado" / ".aviso" dentro de .zona-objetivo — esos quedan
+   en blanco para que el alumno los estilice desde estilos.css.
+   No hace falta tocar este archivo durante la actividad.
+   ============================================================ */
+
+:root{
+  --ink:#1B2430;
+  --paper:#EDE6D6;
+  --paper-dark:#E1D6BC;
+  --gold:#B8892B;
+  --signal:#3E8E88;
+  --crimson:#A6473F;
+  --ink-soft:#5B6472;
+  --line:#C9BE9E;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  font-family:'Segoe UI', Arial, sans-serif;
+  line-height:1.55;
+}
+
+/* ---------- encabezado de la página ---------- */
+.paso-header{
+  background:var(--ink);color:var(--paper);
+  padding:40px 8vw 34px;
+}
+.paso-header .eyebrow{
+  font-family:'Courier New', monospace;font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--signal);margin:0 0 10px;
+}
+.paso-header h1{font-size:clamp(26px,4vw,38px);margin:0 0 14px;font-weight:700;}
+.paso-header .intro{max-width:720px;color:#C7CDD6;font-size:15.5px;margin:0;}
+
+/* ---------- estructura de cada paso ---------- */
+.paso{
+  display:flex;gap:22px;max-width:900px;margin:0 auto;padding:34px 8vw;
+  border-bottom:1px solid var(--line);
+}
+.paso-numero{
+  flex-shrink:0;width:42px;height:42px;border-radius:50%;
+  background:var(--signal);color:#fff;font-weight:700;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:Georgia, serif;
+}
+.paso.desafio .paso-numero.reto{background:var(--crimson);}
+
+.paso-contenido{flex:1;min-width:0;}
+.paso-titulo{
+  font-size:21px;margin:0 0 12px;color:var(--ink);font-family:Georgia, serif;
+}
+
+/* Ojo: selector de HIJO DIRECTO (>) a propósito, para no afectar
+   los <p> que están DENTRO de .zona-objetivo (esos son del alumno) */
+.paso-contenido > p{
+  color:var(--ink-soft);font-size:15px;margin:0 0 14px;
+}
+.paso-contenido > ol{
+  color:var(--ink-soft);font-size:15px;padding-left:22px;margin:0 0 14px;
+}
+.paso-contenido > ol li{margin-bottom:10px;}
+.paso-contenido code{
+  font-family:'Courier New', monospace;background:var(--paper-dark);
+  padding:1px 5px;border-radius:3px;font-size:13.5px;color:var(--ink);
+}
+
+.codigo-box{
+  font-family:'Courier New', monospace;font-size:14px;
+  background:var(--ink);color:var(--signal);
+  padding:14px 16px;border-radius:4px;margin:0 0 14px;
+  white-space:pre-wrap;line-height:1.7;
+}
+
+.por-que{
+  background:rgba(184,137,43,.12);border:1px solid rgba(184,137,43,.35);
+  padding:12px 14px;border-radius:4px;color:var(--ink) !important;
+  font-size:14px;
+}
+
+/* ---------- la zona que el alumno tiene que estilizar ----------
+   Solo margen/relleno/borde de layout. CERO color o background
+   sobre h2, p, .destacado o .aviso: eso lo define el alumno. */
+.zona-objetivo{
+  position:relative;
+  border:2px dashed var(--line);
+  border-radius:4px;
+  padding:22px 22px 18px;
+  margin:18px 0;
+}
+.zona-objetivo::before{
+  content:"ZONA A ESTILIZAR";
+  position:absolute;top:-11px;left:16px;
+  background:var(--paper);padding:0 8px;
+  font-family:'Courier New', monospace;font-size:10.5px;
+  letter-spacing:.06em;color:var(--ink-soft);
+}
+.zona-objetivo > *{margin:0 0 10px;}
+.zona-objetivo > *:last-child{margin-bottom:0;}
+
+/* ---------- cierre ---------- */
+.cierre{
+  max-width:900px;margin:0 auto;padding:34px 8vw 60px;
+  text-align:center;color:var(--ink-soft);font-size:14.5px;
+}
+.cierre .commit-msg{
+  display:inline-block;margin-top:10px;font-family:'Courier New', monospace;
+  background:var(--ink);color:var(--gold);padding:10px 16px;border-radius:4px;
+  font-size:14px;
+}
