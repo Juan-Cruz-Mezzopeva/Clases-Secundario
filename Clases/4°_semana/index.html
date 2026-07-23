@@ -1,101 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Actividad Clase 1 · Selectores y especificidad</title>
-<link rel="stylesheet" href="guia.css">
-<!--
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad Clase 1 · Selectores y especificidad</title>
+    <link rel="stylesheet" href="guia.css" />
+    <link rel="stylesheet" href="estilos.css" />
+    <!--
   PASO 0 — todavía falta esta línea acá abajo:
   <link rel="stylesheet" href="estilos.css">
   Fijate cómo está escrita la línea de arriba (la de guia.css) para copiar el mismo formato.
 -->
-</head>
-<body>
+  </head>
+  <body>
+    <header class="paso-header">
+      <p class="eyebrow">Actividad guiada · Clase 1</p>
+      <h1>Selectores, cascada y especificidad</h1>
+      <p class="intro">
+        Vas a completar <code>estilos.css</code> paso a paso. Cada vez que lo
+        guardes y recargues esta página (F5), vas a ver el resultado acá mismo.
+        Leé cada paso antes de escribir código — la idea no es adivinar, es
+        predecir.
+      </p>
+    </header>
 
-<header class="paso-header">
-  <p class="eyebrow">Actividad guiada · Clase 1</p>
-  <h1>Selectores, cascada y especificidad</h1>
-  <p class="intro">Vas a completar <code>estilos.css</code> paso a paso. Cada vez que lo guardes y recargues esta página (F5), vas a ver el resultado acá mismo. Leé cada paso antes de escribir código — la idea no es adivinar, es predecir.</p>
-</header>
-
-<section class="paso" id="paso-0">
-  <div class="paso-numero">0</div>
-  <div class="paso-contenido">
-    <h3 class="paso-titulo">Conectar el archivo</h3>
-    <p>Este HTML todavía no está conectado a <code>estilos.css</code>. Por eso, todo lo que hay dentro de la "zona a estilizar" de cada nivel se ve completamente plano — así se ve cualquier página sin CSS.</p>
-    <p><strong>Hacé esto:</strong> abrí este archivo, andá al <code>&lt;head&gt;</code>, y agregá la línea que conecta <code>estilos.css</code> (está comentada ahí mismo, como pista).</p>
-    <p>Después, como primera prueba, escribí esta regla en <code>estilos.css</code> y recargá la página:</p>
-    <div class="codigo-box">body {<br>&nbsp;&nbsp;background-color: #f0f0f0;<br>}</div>
-    <p class="por-que">💡 <strong>Por qué:</strong> si el fondo de la página cambia, ya sabés que el archivo está conectado. Si recargás y no cambió nada, revisá el <code>&lt;link&gt;</code> antes de seguir — no tiene sentido avanzar sin esto.</p>
-  </div>
-</section>
-
-<main class="contenido-real">
-
-  <section class="paso" id="nivel-1">
-    <div class="paso-numero">1</div>
-    <div class="paso-contenido">
-      <h3 class="paso-titulo">Nivel 1 — Selectores de etiqueta</h3>
-      <p>Los dos elementos de abajo, un <code>&lt;h2&gt;</code> y un <code>&lt;p&gt;</code>, todavía no tienen ningún estilo propio.</p>
-
-      <div class="zona-objetivo">
-        <h2>Este es el título que vas a estilizar</h2>
-        <p>Y este es un párrafo común, sin ninguna clase. Los dos se seleccionan solo por su etiqueta.</p>
+    <section class="paso" id="paso-0">
+      <div class="paso-numero">0</div>
+      <div class="paso-contenido">
+        <h3 class="paso-titulo">Conectar el archivo</h3>
+        <p>
+          Este HTML todavía no está conectado a <code>estilos.css</code>. Por
+          eso, todo lo que hay dentro de la "zona a estilizar" de cada nivel se
+          ve completamente plano — así se ve cualquier página sin CSS.
+        </p>
+        <p>
+          <strong>Hacé esto:</strong> abrí este archivo, andá al
+          <code>&lt;head&gt;</code>, y agregá la línea que conecta
+          <code>estilos.css</code> (está comentada ahí mismo, como pista).
+        </p>
+        <p>
+          Después, como primera prueba, escribí esta regla en
+          <code>estilos.css</code> y recargá la página:
+        </p>
+        <div class="codigo-box">
+          body {<br />&nbsp;&nbsp;background-color: #f0f0f0;<br />}
+        </div>
+        <p class="por-que">
+          💡 <strong>Por qué:</strong> si el fondo de la página cambia, ya sabés
+          que el archivo está conectado. Si recargás y no cambió nada, revisá el
+          <code>&lt;link&gt;</code> antes de seguir — no tiene sentido avanzar
+          sin esto.
+        </p>
       </div>
+    </section>
 
-      <p><strong>Hacé esto:</strong> en <code>estilos.css</code>, escribí una regla para <code>h2</code> y otra para <code>p</code>, cada una con un color de texto distinto.</p>
-      <div class="codigo-box">h2 { color: ???; }<br>p { color: ???; }</div>
-      <p class="por-que">💡 <strong>Por qué:</strong> un selector de etiqueta afecta a <em>todos</em> los elementos de ese tipo en toda la página — inclusive a los que van a aparecer en los niveles siguientes. Guardalo en la cabeza para el Nivel 3.</p>
-    </div>
-  </section>
+    <main class="contenido-real">
+      <section class="paso" id="nivel-1">
+        <div class="paso-numero">1</div>
+        <div class="paso-contenido">
+          <h3 class="paso-titulo">Nivel 1 — Selectores de etiqueta</h3>
+          <p>
+            Los dos elementos de abajo, un <code>&lt;h2&gt;</code> y un
+            <code>&lt;p&gt;</code>, todavía no tienen ningún estilo propio.
+          </p>
 
-  <section class="paso" id="nivel-2">
-    <div class="paso-numero">2</div>
-    <div class="paso-contenido">
-      <h3 class="paso-titulo">Nivel 2 — Selectores de clase</h3>
-      <p>Ahora hay tres párrafos seguidos. Solo uno tiene la clase <code>destacado</code>.</p>
+          <div class="zona-objetivo">
+            <h2>Este es el título que vas a estilizar</h2>
+            <p>
+              Y este es un párrafo común, sin ninguna clase. Los dos se
+              seleccionan solo por su etiqueta.
+            </p>
+          </div>
 
-      <div class="zona-objetivo">
-        <p>Este es un párrafo común, igual que en el nivel anterior.</p>
-        <p class="destacado">Este párrafo tiene la clase "destacado".</p>
-        <p>Este es otro párrafo común, sin clase.</p>
-      </div>
+          <p>
+            <strong>Hacé esto:</strong> en <code>estilos.css</code>, escribí una
+            regla para <code>h2</code> y otra para <code>p</code>, cada una con
+            un color de texto distinto.
+          </p>
+          <div class="codigo-box">
+            h2 { color: ???; }<br />p { color: ???; }
+          </div>
+          <p class="por-que">
+            💡 <strong>Por qué:</strong> un selector de etiqueta afecta a
+            <em>todos</em> los elementos de ese tipo en toda la página —
+            inclusive a los que van a aparecer en los niveles siguientes.
+            Guardalo en la cabeza para el Nivel 3.
+          </p>
+        </div>
+      </section>
 
-      <p><strong>Hacé esto:</strong> escribí una regla <code>.destacado</code> que le cambie el <code>background-color</code> solamente a ese párrafo, sin tocar los otros dos.</p>
-      <div class="codigo-box">.destacado {<br>&nbsp;&nbsp;background-color: ???;<br>}</div>
-      <p class="por-que">💡 <strong>Por qué:</strong> el selector de clase apunta solo a los elementos que la tienen, aunque compartan la misma etiqueta con otros que no. Además, si guardaste el Nivel 1, fijate que el color de texto del <code>p { color: ...}</code> también se sigue aplicando acá — las reglas se van sumando, no se reemplazan entre sí.</p>
-    </div>
-  </section>
+      <section class="paso" id="nivel-2">
+        <div class="paso-numero">2</div>
+        <div class="paso-contenido">
+          <h3 class="paso-titulo">Nivel 2 — Selectores de clase</h3>
+          <p>
+            Ahora hay tres párrafos seguidos. Solo uno tiene la clase
+            <code>destacado</code>.
+          </p>
 
-  <section class="paso desafio" id="nivel-3">
-    <div class="paso-numero reto">3</div>
-    <div class="paso-contenido">
-      <h3 class="paso-titulo">Nivel 3 — El desafío de especificidad</h3>
-      <p>Este párrafo tiene la clase <code>aviso</code>. Fijate que también es un <code>&lt;p&gt;</code> — o sea que le pueden aplicar dos reglas distintas al mismo tiempo: una por etiqueta y otra por clase.</p>
+          <div class="zona-objetivo">
+            <p>Este es un párrafo común, igual que en el nivel anterior.</p>
+            <p class="destacado">Este párrafo tiene la clase "destacado".</p>
+            <p>Este es otro párrafo común, sin clase.</p>
+          </div>
 
-      <div class="zona-objetivo">
-        <p class="aviso">¿De qué color voy a quedar?</p>
-      </div>
+          <p>
+            <strong>Hacé esto:</strong> escribí una regla
+            <code>.destacado</code> que le cambie el
+            <code>background-color</code> solamente a ese párrafo, sin tocar los
+            otros dos.
+          </p>
+          <div class="codigo-box">
+            .destacado {<br />&nbsp;&nbsp;background-color: ???;<br />}
+          </div>
+          <p class="por-que">
+            💡 <strong>Por qué:</strong> el selector de clase apunta solo a los
+            elementos que la tienen, aunque compartan la misma etiqueta con
+            otros que no. Además, si guardaste el Nivel 1, fijate que el color
+            de texto del <code>p { color: ...}</code> también se sigue aplicando
+            acá — las reglas se van sumando, no se reemplazan entre sí.
+          </p>
+        </div>
+      </section>
 
-      <p><strong>Hacé esto, en este orden — no te saltees pasos:</strong></p>
-      <ol>
-        <li><strong>Predecí primero, en tu cuaderno:</strong> si escribís <code>p { color: blue; }</code> y <code>.aviso { color: red; }</code> en <code>estilos.css</code>, ¿de qué color va a quedar este párrafo? ¿Te parece que importa cuál de las dos reglas escribas primero en el archivo?</li>
-        <li>Recién ahora escribí las dos reglas en <code>estilos.css</code> y recargá la página para comprobar tu predicción.</li>
-        <li>Invertí el orden de las dos reglas dentro del archivo (poné <code>.aviso</code> primero y <code>p</code> después) y recargá de nuevo. ¿Cambió el resultado?</li>
-        <li>Escribí en tu cuaderno, con tus palabras, por qué ganó la regla que ganó.</li>
-      </ol>
-      <div class="codigo-box">p { color: ???; }<br>.aviso { color: ???; }</div>
-      <p class="por-que">💡 <strong>Por qué:</strong> acá no gana el orden en el archivo — gana el selector que más "pesa". Una clase pesa más que una etiqueta, sin importar en qué línea esté escrita cada una.</p>
-    </div>
-  </section>
+      <section class="paso desafio" id="nivel-3">
+        <div class="paso-numero reto">3</div>
+        <div class="paso-contenido">
+          <h3 class="paso-titulo">Nivel 3 — El desafío de especificidad</h3>
+          <p>
+            Este párrafo tiene la clase <code>aviso</code>. Fijate que también
+            es un <code>&lt;p&gt;</code> — o sea que le pueden aplicar dos
+            reglas distintas al mismo tiempo: una por etiqueta y otra por clase.
+          </p>
 
-</main>
+          <div class="zona-objetivo">
+            <p class="aviso">¿De qué color voy a quedar?</p>
+          </div>
 
-<footer class="cierre">
-  <p>Cuando termines los 3 niveles y hayas anotado tus respuestas del desafío, guardá <code>estilos.css</code> y hacé el commit:</p>
-  <p class="commit-msg">init: conectar CSS y aplicar estilos base</p>
-</footer>
+          <p>
+            <strong>Hacé esto, en este orden — no te saltees pasos:</strong>
+          </p>
+          <ol>
+            <li>
+              <strong>Predecí primero, en tu cuaderno:</strong> si escribís
+              <code>p { color: blue; }</code> y
+              <code>.aviso { color: red; }</code> en <code>estilos.css</code>,
+              ¿de qué color va a quedar este párrafo? ¿Te parece que importa
+              cuál de las dos reglas escribas primero en el archivo?
+            </li>
+            <li>
+              Recién ahora escribí las dos reglas en <code>estilos.css</code> y
+              recargá la página para comprobar tu predicción.
+            </li>
+            <li>
+              Invertí el orden de las dos reglas dentro del archivo (poné
+              <code>.aviso</code> primero y <code>p</code> después) y recargá de
+              nuevo. ¿Cambió el resultado?
+            </li>
+          </ol>
+          <div class="codigo-box">
+            p { color: ???; }<br />.aviso { color: ???; }
+          </div>
+          <p class="por-que">
+            💡 <strong>Por qué:</strong> acá no gana el orden en el archivo —
+            gana el selector que más "pesa". Una clase pesa más que una
+            etiqueta, sin importar en qué línea esté escrita cada una.
+          </p>
+        </div>
+      </section>
+    </main>
 
-</body>
+    <footer class="cierre">
+      <p>
+        Cuando termines los 3 niveles y hayas anotado tus respuestas del
+        desafío, guardá <code>estilos.css</code> y hacé el commit:
+      </p>
+      <p class="commit-msg">init: conectar CSS y aplicar estilos base</p>
+    </footer>
+  </body>
 </html>
