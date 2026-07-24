@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad Clase 2 · El modelo de caja</title>
+<link rel="stylesheet" href="guia.css">
+<!-- Recordatorio: si esto no está conectado a estilos.css, agregalo acá:
+<link rel="stylesheet" href="estilos.css"> -->
+</head>
+<body>
+
+<header class="paso-header">
+  <p class="eyebrow">Actividad guiada · Clase 2</p>
+  <h1>El modelo de caja</h1>
+  <p class="intro">Vas a completar <code>estilos.css</code> nivel por nivel. Los cuadros con el borde punteado y la etiqueta "ZONA A ESTILIZAR" son los únicos que tenés que tocar — el resto de la página (estos textos) ya viene resuelto en <code>guia.css</code>.</p>
+</header>
+
+<section class="paso" id="paso-0">
+  <div class="paso-numero">0</div>
+  <div class="paso-contenido">
+    <h3 class="paso-titulo">Repaso relámpago</h3>
+    <p>Conectá <code>estilos.css</code> si todavía no lo hiciste (el mismo paso de la clase pasada). En todas las "zonas a estilizar" de abajo vas a ver un contorno punteado gris fino — ese es solo un marcador de <code>outline</code> para que veas dónde está cada caja; no cuenta como estilo tuyo, y no ocupa espacio en el diseño.</p>
+  </div>
+</section>
+
+<main class="contenido-real">
+
+  <section class="paso" id="nivel-1">
+    <div class="paso-numero">1</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 1 — Padding</h3>
+      <p>El texto de la caja de abajo está pegado contra su propio borde. El padding separa el contenido de ese límite.</p>
+
+      <div class="zona-objetivo">
+        <div class="caja demo-caja caja-padding">Contenido pegado al borde</div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> agregá <code>padding</code> a <code>.caja-padding</code> hasta que el texto tenga aire alrededor.</p>
+      <div class="codigo-box">.caja-padding { padding: ???; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> el padding es el espacio entre el contenido y el límite de la caja — el "papel de seda" alrededor del regalo.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-2">
+    <div class="paso-numero">2</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 2 — Border</h3>
+      <p>Ahora mismo, el límite de esta caja solo se ve por el contorno punteado gris de referencia (que no es tuyo). Vas a darle un borde real.</p>
+
+      <div class="zona-objetivo">
+        <div class="caja demo-caja caja-border">Esta caja necesita un borde visible</div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> agregá <code>border</code> a <code>.caja-border</code> — elegí grosor, estilo (<code>solid</code>, <code>dashed</code>...) y color.</p>
+      <div class="codigo-box">.caja-border { border: ???; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> el border es la "pared" de la caja: el límite entre el padding (adentro) y el margin (afuera). Es la única de las tres capas que se ve por sí misma, sin necesitar un color de fondo.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-3">
+    <div class="paso-numero">3</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 3 — Margin</h3>
+      <p>Estas dos cajas están una al lado de la otra, sin ningún espacio entre ellas.</p>
+
+      <div class="zona-objetivo">
+        <div class="fila-horizontal">
+          <div class="caja demo-caja caja-margin-a">Caja A</div>
+          <div class="caja demo-caja caja-margin-b">Caja B</div>
+        </div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> agregale <code>margin</code> a <code>.caja-margin-a</code> (por ejemplo, <code>margin-right</code>) para separarla de la Caja B.</p>
+      <div class="codigo-box">.caja-margin-a { margin-right: ???; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> a diferencia del padding, el margin empuja a los <em>demás</em> elementos, no al contenido propio — separa una caja de la siguiente, no el contenido de su propio borde.</p>
+    </div>
+  </section>
+
+  <section class="paso desafio" id="nivel-4">
+    <div class="paso-numero reto">4</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 4 — box-sizing: el ancho que no era</h3>
+      <p>La barra dorada de abajo mide exactamente <strong>200px</strong> de ancho — es tu regla de referencia. Debajo tenés una caja que también vas a poner en 200px.</p>
+
+      <div class="zona-objetivo">
+        <div class="medidor-contenedor">
+          <div class="medidor-200px"></div>
+          <div class="caja demo-caja caja-ancho">Contenido</div>
+        </div>
+      </div>
+
+      <p><strong>Hacé esto, en este orden:</strong></p>
+      <ol>
+        <li>Escribí <code>.caja-ancho { width: 200px; padding: 20px; border: 5px solid; }</code> en <code>estilos.css</code> y recargá. Vas a ver que el borde derecho de la caja se pasa de la línea dorada.</li>
+        <li><strong>Antes de corregir nada, predecí:</strong> ¿por qué una caja de <code>width: 200px</code> termina midiendo más de 200px en pantalla?</li>
+        <li>Agregá <code>box-sizing: border-box;</code> a la misma regla y recargá. El borde derecho ahora debería coincidir con la línea dorada.</li>
+      </ol>
+      <div class="codigo-box">.caja-ancho {<br>&nbsp;&nbsp;width: 200px;<br>&nbsp;&nbsp;padding: 20px;<br>&nbsp;&nbsp;border: 5px solid;<br>&nbsp;&nbsp;box-sizing: ???;<br>}</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> por defecto, <code>width</code> mide solo el contenido — el padding y el border se suman por fuera. Con <code>box-sizing: border-box</code>, el <code>width</code> que escribís pasa a ser el ancho total, contando todo.</p>
+    </div>
+  </section>
+
+  <section class="paso desafio" id="nivel-5">
+    <div class="paso-numero reto">5</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 5 — El margen colapsado</h3>
+      <p>Dos cajas apiladas, una arriba de la otra.</p>
+
+      <div class="zona-objetivo">
+        <div class="caja demo-caja caja-colapso-a">Caja A</div>
+        <div class="caja demo-caja caja-colapso-b">Caja B</div>
+      </div>
+
+      <p><strong>Hacé esto, en este orden:</strong></p>
+      <ol>
+        <li><strong>Predecí primero:</strong> si le ponés <code>margin-bottom: 30px</code> a la Caja A y <code>margin-top: 30px</code> a la Caja B, ¿cuánto espacio va a quedar entre las dos: 30px, 60px, o otra cosa?</li>
+        <li>Escribí esas dos reglas en <code>estilos.css</code> y recargá para comprobarlo.</li>
+        <li>Ahora agregale a la Caja A, además del margin, un <code>padding-bottom: 1px</code> (un valor mínimo, casi invisible) y recargá de nuevo. ¿Cambió el espacio final entre las cajas?</li>
+      </ol>
+      <div class="codigo-box">.caja-colapso-a { margin-bottom: ???; }<br>.caja-colapso-b { margin-top: ???; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> dos márgenes verticales que se tocan directamente no se suman — se quedan con el más grande. Pero apenas hay padding o border entre medio (como en el paso 3), ya no se tocan directamente, y ahí sí se respeta cada margin por separado.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-6">
+    <div class="paso-numero">6</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 6 — Integración: armá una tarjeta completa</h3>
+      <p>Última caja. Esta vez no hay pistas de qué propiedad usar en cada línea — el objetivo es que decidas vos con todo lo que ya practicaste.</p>
+
+      <div class="zona-objetivo">
+        <div class="caja demo-caja tarjeta-final">
+          <strong>Tarjeta final</strong><br>
+          Dale a esta caja: separación entre el texto y su propio borde, un borde visible, separación respecto de lo que venga después, un ancho fijo que no se rompa por el padding, y un color de fondo propio.
+        </div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> escribí una sola regla <code>.tarjeta-final</code> que combine <code>padding</code>, <code>border</code>, <code>margin</code>, <code>width</code>, <code>box-sizing</code> y <code>background-color</code>.</p>
+      <div class="codigo-box">.tarjeta-final {<br>&nbsp;&nbsp;/* completá vos las seis propiedades */<br>}</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> en un proyecto real casi nunca usás una sola propiedad del box model sola — se combinan todas en la misma regla, como en cualquier tarjeta o sección que vayan a construir para el proyecto del curso.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cierre">
+  <p>Cuando termines los 6 niveles, guardá <code>estilos.css</code>, anotá tus predicciones de los Niveles 4 y 5, y hacé el commit en tu rama:</p>
+  <p class="commit-msg">style: box model en &lt;sección asignada&gt;</p>
+</footer>
+
+</body>
+</html>

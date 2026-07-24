@@ -7,21 +7,8 @@
 
 /* Paso 0: probá esto primero para confirmar que estás conectado */
 
-body {
-  background-color: #e5e3ff;
-}
 /* Nivel 1: selectores de etiqueta (h2 y p) */
 
-h2 {
-  color: #ff0000;
-}
-p {
-  color: #02142e;
-}
 /* Nivel 2: selector de clase (.destacado) */
-
-.destacado {
-  background-color: #ffff0050;
-}
 
 /* Nivel 3: el desafío de especificidad (p y .aviso) */
