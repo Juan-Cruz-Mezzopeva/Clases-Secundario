@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividad Clase 3 · Tipografía, colores y variables</title>
+<link rel="stylesheet" href="guia.css">
+<!-- Recordatorio: conectá también estilos.css si todavía no lo hiciste:
+<link rel="stylesheet" href="estilos.css"> -->
+<!-- Nivel 3 va a pedirte agregar acá un <link> a Google Fonts -->
+</head>
+<body>
+
+<header class="paso-header">
+  <p class="eyebrow">Actividad guiada · Clase 3</p>
+  <h1>Tipografía, colores y variables CSS</h1>
+  <p class="intro">Vas a completar <code>estilos.css</code> nivel por nivel. Como siempre, los cuadros con borde punteado y la etiqueta "ZONA A ESTILIZAR" son los únicos que tenés que tocar.</p>
+</header>
+
+<section class="paso" id="paso-0">
+  <div class="paso-numero">0</div>
+  <div class="paso-contenido">
+    <h3 class="paso-titulo">Repaso relámpago</h3>
+    <p>Conectá <code>estilos.css</code> si todavía no lo hiciste. Esta actividad necesita conexión a internet a partir del Nivel 3, porque vas a importar una fuente real desde Google Fonts.</p>
+  </div>
+</section>
+
+<main class="contenido-real">
+
+  <section class="paso" id="nivel-1">
+    <div class="paso-numero">1</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 1 — Tipografía: comparar dos fuentes</h3>
+      <p>Estos dos párrafos tienen exactamente el mismo texto, pero todavía ninguno tiene tipografía propia.</p>
+
+      <div class="zona-objetivo">
+        <p class="texto-a">Este párrafo va a usar una tipografía con serifas (con "patitas" en las letras).</p>
+        <p class="texto-b">Este párrafo va a usar una tipografía de palo seco (sin "patitas").</p>
+      </div>
+
+      <p><strong>Hacé esto:</strong> aplicale a <code>.texto-a</code> una fuente <code>serif</code> del sistema (por ejemplo <code>Georgia, serif</code>) y a <code>.texto-b</code> una <code>sans-serif</code> (por ejemplo <code>Arial, sans-serif</code>). De paso, dale a cada uno un <code>font-size</code> y un <code>line-height</code> distinto.</p>
+      <div class="codigo-box">.texto-a { font-family: ???; font-size: ???; line-height: ???; }<br>.texto-b { font-family: ???; font-size: ???; line-height: ???; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> antes de importar una fuente externa, conviene notar cómo cambia la lectura solo con lo que ya viene instalado en cualquier computadora.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-2">
+    <div class="paso-numero">2</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 2 — Los 3 formatos de color</h3>
+      <p>Estos tres recuadros deberían terminar siendo <strong>del mismo color exacto</strong>, escrito de tres formas distintas.</p>
+
+      <div class="zona-objetivo">
+        <div class="fila-horizontal">
+          <div class="muestra-color color-nombre">nombre</div>
+          <div class="muestra-color color-hex">hex</div>
+          <div class="muestra-color color-rgb">rgb</div>
+        </div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> elegí un color y escribilo de las tres formas. Por ejemplo, si elegís "purple": buscá su equivalente en HEX y en RGB (podés buscar "purple hex rgb" o probar con <code>#800080</code>).</p>
+      <div class="codigo-box">.color-nombre { background-color: ???; }  /* nombre */<br>.color-hex { background-color: ???; }     /* #?????? */<br>.color-rgb { background-color: ???; }     /* rgb(?, ?, ?) */</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> los tres formatos son intercambiables — lo que cambia es la precisión y qué tan cómodo es escribirlos. En la industria, HEX es el más común.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-3">
+    <div class="paso-numero">3</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 3 — Importar una fuente de Google Fonts</h3>
+      <p>Esta vez el título de acá abajo va a usar una fuente real, importada desde internet.</p>
+
+      <div class="zona-objetivo">
+        <h2 class="titulo-google-font">Este título va a cambiar de tipografía</h2>
+      </div>
+
+      <p><strong>Hacé esto, en este orden:</strong></p>
+      <ol>
+        <li>Entrá a <a href="https://fonts.google.com" target="_blank" rel="noopener">fonts.google.com</a>, elegí una fuente que te guste y conseguí su <code>&lt;link&gt;</code> de importación.</li>
+        <li>Pegá ese <code>&lt;link&gt;</code> en el <code>&lt;head&gt;</code> de este archivo (fijate el comentario que dejamos ahí como pista).</li>
+        <li>En <code>estilos.css</code>, aplicale esa fuente a <code>.titulo-google-font</code>.</li>
+      </ol>
+      <div class="codigo-box">.titulo-google-font { font-family: '???', sans-serif; }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> el <code>&lt;link&gt;</code> solo descarga la fuente — todavía hace falta decirle a algún elemento que la use con <code>font-family</code>. Son dos pasos, no uno.</p>
+    </div>
+  </section>
+
+  <section class="paso desafio" id="nivel-4">
+    <div class="paso-numero reto">4</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 4 — Variables en :root</h3>
+      <p>Vas a declarar tu paleta como variables, en vez de escribir los colores sueltos.</p>
+
+      <div class="zona-objetivo">
+        <p class="usa-variable-1">Este texto va a usar tu color primario.</p>
+        <p class="usa-variable-2">Este texto va a usar tu color secundario.</p>
+      </div>
+
+      <p><strong>Hacé esto:</strong> al principio de <code>estilos.css</code>, declará dos variables dentro de <code>:root</code>, y usalas con <code>var()</code> en los dos párrafos de arriba.</p>
+      <div class="codigo-box">:root {<br>&nbsp;&nbsp;--color-primario: ???;<br>&nbsp;&nbsp;--color-secundario: ???;<br>}<br><br>.usa-variable-1 { color: var(--color-primario); }<br>.usa-variable-2 { color: var(--color-secundario); }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> <code>:root</code> es el "punto más alto" del documento — una variable declarada ahí está disponible en cualquier regla de todo el archivo.</p>
+    </div>
+  </section>
+
+  <section class="paso desafio" id="nivel-5">
+    <div class="paso-numero reto">5</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 5 — Propagación: cambiar una variable, ver 3 cambios</h3>
+      <p>Estos tres elementos van a usar la <strong>misma</strong> variable de color, cada uno en una propiedad distinta.</p>
+
+      <div class="zona-objetivo">
+        <div class="prop-caja">Fondo con la variable</div>
+        <p class="prop-texto">Texto con la variable</p>
+        <div class="prop-borde">Borde con la variable</div>
+      </div>
+
+      <p><strong>Hacé esto, en este orden:</strong></p>
+      <ol>
+        <li>Creá una variable nueva, <code>--color-acento</code>, en <code>:root</code>.</li>
+        <li>Usala en los tres elementos de arriba: como <code>background-color</code>, como <code>color</code> y como <code>border-color</code> respectivamente.</li>
+        <li>Ahora cambiá <strong>solo el valor de <code>--color-acento</code></strong> en <code>:root</code> (un color distinto) y recargá. Los tres elementos deberían cambiar juntos, sin tocar sus propias reglas.</li>
+      </ol>
+      <div class="codigo-box">:root { --color-acento: ???; }<br><br>.prop-caja { background-color: var(--color-acento); }<br>.prop-texto { color: var(--color-acento); }<br>.prop-borde { border: 3px solid var(--color-acento); }</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> esto es lo que en verdad ahorra tiempo — no es solo "menos para escribir", es poder cambiar todo un sistema de diseño editando una sola línea.</p>
+    </div>
+  </section>
+
+  <section class="paso" id="nivel-6">
+    <div class="paso-numero">6</div>
+    <div class="paso-contenido">
+      <h3 class="paso-titulo">Nivel 6 — Integración: armá tu mini sistema de diseño</h3>
+      <p>Última caja. Esta vez la única regla es: <strong>todo lo que uses acá tiene que venir de una variable</strong>, no de un valor suelto.</p>
+
+      <div class="zona-objetivo">
+        <div class="tarjeta-identidad">
+          <h2>Tarjeta de identidad</h2>
+          <p>Esta tarjeta debería usar tu tipografía de Google Fonts, tu color primario o secundario, y algún acento — todo a través de <code>var()</code>.</p>
+        </div>
+      </div>
+
+      <p><strong>Hacé esto:</strong> escribí una regla <code>.tarjeta-identidad</code> (y si querés, una para el <code>h2</code> y el <code>p</code> de adentro) usando exclusivamente <code>var(--...)</code> para colores y tipografía. Podés combinarlo con lo que aprendiste de box model en la clase pasada.</p>
+      <div class="codigo-box">.tarjeta-identidad {<br>&nbsp;&nbsp;font-family: var(--???);<br>&nbsp;&nbsp;background-color: var(--???);<br>&nbsp;&nbsp;border: 2px solid var(--???);<br>&nbsp;&nbsp;/* + padding, margin, etc. */<br>}</div>
+      <p class="por-que">💡 <strong>Por qué:</strong> esta tarjeta es, en chiquito, exactamente el mismo tipo de decisión que van a tomar entre todos para el proyecto del curso: una identidad definida una vez y usada en todos lados.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="cierre">
+  <p>Cuando termines los 6 niveles, guardá <code>estilos.css</code> y hacé el commit:</p>
+  <p class="commit-msg">style: identidad visual (tipografía + paleta de variables)</p>
+</footer>
+
+</body>
+</html>
